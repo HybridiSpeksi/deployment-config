@@ -8,19 +8,10 @@ services:
     networks:
       - docker-network
     links:
-      - web_1
-      - web_2
-  web_1:
+      - web
+  web:
     image: hybridispeksi/web:latest
-    container_name: web_1
-    restart: unless-stopped
-    env_file:
-      - .env
-    networks:
-      - docker-network
-  web_2:
-    image: hybridispeksi/web:latest
-    container_name: web_2
+    container_name: web
     restart: unless-stopped
     env_file:
       - .env
