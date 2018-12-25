@@ -23,7 +23,7 @@ docker run -it --rm --name letsencrypt \
 # because we can't depend on the PATH or the context of the crontab execution. As such,
 # this makes it very clear exactly what will be executed.
 #
-/var/www/hybridispeksi.fi/deployment-config/docker-compose -f /root/docker-compose.yml restart nginx
+docker-compose -f docker-compose.yml restart nginx
 
 #
 # I sent a DogStatsD metric to DataDog, recording the successful completion of the
