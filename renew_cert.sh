@@ -1,4 +1,4 @@
-docker run -it --rm --name letsencrypt \
+/usr/bin/docker run -it --rm --name letsencrypt \
 	-v "/etc/letsencrypt:/etc/letsencrypt" \
 	quay.io/letsencrypt/letsencrypt:latest \
 		renew &&
@@ -23,10 +23,10 @@ docker run -it --rm --name letsencrypt \
 # because we can't depend on the PATH or the context of the crontab execution. As such,
 # this makes it very clear exactly what will be executed.
 #
-docker-compose -f docker-compose.yml restart nginx
+/usr/local/bin/docker-compose -f /var/www/hybridispeksi.fi/deployment-config/docker-compose.yml restart nginx &&
 
 #
 # I sent a DogStatsD metric to DataDog, recording the successful completion of the
 # certificate renewal.
 #
-# /var/www/hybridispeksi.fi/deployment-config/docker-compose -f /root/docker-compose.yml exec dd_agent bash -c "echo 'script.renew_certificate:1|c' > /dev/udp/127.0.0.1/8125"
+/usr/local/bin/docker-compose -f /var/www/hybridispeksi.fi/deployment-config/docker-compose.yml exec dd_agent bash -c "echo 'script.renew_certificate:1|c' > /dev/udp/127.0.0.1/8125"
