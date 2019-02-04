@@ -13,7 +13,7 @@ services:
     links:
       - web
   web:
-    image: hybridispeksi/web:latest
+    image: hybridispeksi/web:8eaa074
     container_name: web
     restart: unless-stopped
     env_file:
