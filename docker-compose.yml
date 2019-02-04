@@ -28,7 +28,7 @@ services:
       - .env
     volumes:
       - /var/lib/postgresql/data:/var/lib/postgresql/data
-      - ./config/my-postgres.conf:/etc/postgresql.conf
+      # - ./config/my-postgres.conf:/etc/postgresql.conf
     command: postgres -c 'config_file=/etc/postgresql.conf'
     networks:
       - docker-network
