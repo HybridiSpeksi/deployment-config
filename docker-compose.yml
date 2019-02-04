@@ -20,18 +20,18 @@ services:
       - .env
     networks:
       - docker-network
-    depends_on:
-      - db
-  db:
-    image: postgres
-    env_file:
-      - .env
-    volumes:
-      - /var/lib/postgresql/data:/var/lib/postgresql/data
-      # - ./config/my-postgres.conf:/etc/postgresql.conf
-    command: postgres -c 'config_file=/etc/postgresql.conf'
-    networks:
-      - docker-network
+    # depends_on:
+    #   - db
+  # db:
+  #   image: postgres
+  #   env_file:
+  #     - .env
+  #   volumes:
+  #     - /var/lib/postgresql/data:/var/lib/postgresql/data
+  #     # - ./config/my-postgres.conf:/etc/postgresql.conf
+  #   command: postgres -c 'config_file=/etc/postgresql.conf'
+  #   networks:
+  #     - docker-network
 
 networks:
   docker-network:
