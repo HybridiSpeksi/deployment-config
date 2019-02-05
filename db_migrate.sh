@@ -1,1 +1,1 @@
-docker exec -it web npm run db:migrate
+docker exec -it web sequelize db:migrate
