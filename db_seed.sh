@@ -1,1 +1,1 @@
-docker exec -it web sequelize db:seed:all
+docker exec -it web npm run db:seed
