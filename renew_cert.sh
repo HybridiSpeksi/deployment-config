@@ -1,5 +1,7 @@
 /usr/bin/docker run -it --rm --name letsencrypt \
 	-v "/etc/letsencrypt:/etc/letsencrypt" \
+  -v "/var/lib/letsencrypt:/var/lib/letsencrypt" \
+  -v "/tmp/letsencrypt/www:/var/www" \
 	quay.io/letsencrypt/letsencrypt:latest \
 		renew &&
 
