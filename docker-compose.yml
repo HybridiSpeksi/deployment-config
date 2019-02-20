@@ -33,23 +33,23 @@ services:
     command: postgres -c 'config_file=/etc/postgresql.conf'
     networks:
       - docker-network
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    depends_on:
-      - db
-    environment:
-      PGADMIN_DEFAULT_EMAIL: pgadmin@mail.com
-      PGADMIN_DEFAULT_PASSWORD: pgadmin
-    volumes:
-      - ./.pgadmindata/pgadmin:/root/.pgadmin
-    ports:
-      - "5050:80"
-    restart: always
-    restart: unless-stopped
-    logging:
-      driver: none
-    networks:
-      - docker-network
+  # pgadmin:
+  #   image: dpage/pgadmin4:latest
+  #   depends_on:
+  #     - db
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: pgadmin@mail.com
+  #     PGADMIN_DEFAULT_PASSWORD: pgadmin
+  #   volumes:
+  #     - ./.pgadmindata/pgadmin:/root/.pgadmin
+  #   ports:
+  #     - "5050:80"
+  #   restart: always
+  #   restart: unless-stopped
+  #   logging:
+  #     driver: none
+  #   networks:
+  #     - docker-network
 
 
 networks:
